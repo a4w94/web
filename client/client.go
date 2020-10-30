@@ -3,14 +3,24 @@ package main
 ///hi test
 
 import (
+	"flag"
+	"fmt"
 	"io"
 	"log"
 	"net"
 	"os"
 )
 
+var (
+	port = "8000"
+
+	addr = flag.String("addr", "localhost:"+port, "http service address")
+)
+
 func main() {
-	conn, err := net.Dial("tcp", "localhost:8000")
+
+	conn, err := net.Dial("tcp", "localhost:"+port)
+	fmt.Println(conn)
 	if err != nil {
 		log.Fatal(err)
 	}
