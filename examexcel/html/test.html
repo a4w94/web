@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<h1>測驗</h1>
+<form action="/entrance/topic" method="post">
+
+<input type="submit" value="出題" name="sendtopic">
+</form>
+
+<form action="/entrance/topic" method="post">
+<style> 
+    table, th, td {
+      border: 1px solid black;
+      width: 20em;
+      height: 2em;
+    }
+    </style> 
+<table>
+    <thead >
+        <tr>
+            <th colspan="2">題目</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+           
+            <th colspan="2">{{.topictitle}}</th>
+           
+        </tr>
+        <tr> 
+            <td><input type="radio" name="select" value="A">A.{{.choose_A}}</td>
+            <td><input type="radio" name="select" value="B">B.{{.choose_B}}</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="select" value="C">C.{{.choose_C}}</td>
+            <td><input type="radio" name="select" value="D">D.{{.choose_C}}</td>
+        </tr>
+
+    </tbody>
+
+</table> 
+
+     <input type="submit" value="提交" name="selectresult">
+</form>
+
+
+
+
+
+</body>
+</html>
